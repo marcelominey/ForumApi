@@ -1,0 +1,10 @@
+C:\Users\22386773809\backend\ForumApi\obj\Debug\netcoreapp2.0\ForumApi.csproj.CoreCompileInputs.cache
+C:\Users\22386773809\backend\ForumApi\obj\Debug\netcoreapp2.0\ForumApi.AssemblyInfoInputs.cache
+C:\Users\22386773809\backend\ForumApi\obj\Debug\netcoreapp2.0\ForumApi.AssemblyInfo.cs
+C:\Users\22386773809\backend\ForumApi\bin\Debug\netcoreapp2.0\ForumApi.deps.json
+C:\Users\22386773809\backend\ForumApi\bin\Debug\netcoreapp2.0\ForumApi.runtimeconfig.json
+C:\Users\22386773809\backend\ForumApi\bin\Debug\netcoreapp2.0\ForumApi.runtimeconfig.dev.json
+C:\Users\22386773809\backend\ForumApi\bin\Debug\netcoreapp2.0\ForumApi.dll
+C:\Users\22386773809\backend\ForumApi\bin\Debug\netcoreapp2.0\ForumApi.pdb
+C:\Users\22386773809\backend\ForumApi\obj\Debug\netcoreapp2.0\ForumApi.dll
+C:\Users\22386773809\backend\ForumApi\obj\Debug\netcoreapp2.0\ForumApi.pdb
