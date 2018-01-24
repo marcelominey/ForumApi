@@ -38,7 +38,7 @@ namespace ForumApi.Controllers
             if(rs.Value==null){
                 rs.StatusCode = 204; //não tem conteúdo (em outros casos, 404)
                 //se retornar nulo, é pq ele não encontrou nada
-                rs.Value = "Não há resultado para essa pesquisa";
+                rs.Value = $"Resultado para id: {id} não retornou dados para essa pesquisa";
             }
             else{
                 rs.StatusCode = 200;
@@ -47,9 +47,31 @@ namespace ForumApi.Controllers
         }
 
     [HttpPost]
-        public void Adicionar([FromBody] Usuario usuario){
+        /*public void Adicionar([FromBody] Usuario usuario){
             dusuario.Cadastro(usuario);
             //qdo for mandar o FromBody, o nome dos campos tem que estar igual
+        }*/
+        public IActionResult Adicionar([FromBody] Usuario usuario)
+        {
+            JsonResult rs;
+            try{
+                rs = new JsonResult( dusuario.Cadastro(usuario));
+                rs.ContentType = "application/json";
+                if(!Convert.ToBoolean(rs.Value)){
+                    rs.StatusCode = 404;
+                    rs.Value = "Ocorreu um erro";
+                }
+                else{
+                    rs.StatusCode = 200;
+                }
+            }
+            catch(System.Exception ex){
+                rs = new JsonResult("");
+                rs.StatusCode = 204;
+                rs.ContentType = "application/json";
+                rs.Value = ex.Message;
+            }
+            return Json(rs);
         }
     }
 
