@@ -54,7 +54,13 @@ namespace ForumApi.Controllers
         public IActionResult Adicionar([FromBody] Usuario usuario)
         {
             JsonResult rs;
-            try{
+            try{ 
+                //tentando enviar o dado; mas ANTES de começar, vou pedir pra validar 
+                //se o estado do meu modelo é válido, ele faz toda a execução abaixo
+                //se não for válido, quero que me retorne uma bad request, e diga quais foram os problemas encontrados:
+                if(!ModelState.IsValid)
+                    return BadRequest(ModelState);
+
                 rs = new JsonResult( dusuario.Cadastro(usuario));
                 rs.ContentType = "application/json";
                 if(!Convert.ToBoolean(rs.Value)){
